@@ -1,7 +1,7 @@
 # Neural-Network-and-Optimizer-Comparison
 This repository contains benchmarking and comparison of the FFNN, RNN, and CNN on sequential and image data, alongwith using different optimizers for analyzing performance.
 
-1. FFNN vs. RNN on Sequential Data (HAR Dataset)
+## 1. FFNN vs. RNN on Sequential Data (HAR Dataset)
 
 In this comparison, the UCI Human Activity Recognition (HAR) dataset was used to classify six physical activities using smartphone sensor data. A custom PyTorch dataset class was created to load and preprocess data from nine signal types, including body acceleration, gyroscope, and total acceleration on three axes (x, y, z). Each signal was collected at 128 time steps, and the final input shape was structured as [samples, 128, 9]. All signals were standardized using global z-score normalization, and the learning rate was set to 0.001.
 
