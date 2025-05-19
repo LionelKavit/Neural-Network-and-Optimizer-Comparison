@@ -7,6 +7,19 @@ In this comparison, the UCI Human Activity Recognition (HAR) dataset was used to
 
 Two models were implemented. The Feedforward Neural Network (FFNN) flattened the input from [128, 9] to a 1D vector of size 1152 and passed it through three linear layers: Linear (1152 → 256) → ReLU → Dropout (0.3) → Linear (256 → 128) → ReLU → Linear (128 → 6). The Recurrent Neural Network (RNN) used an LSTM architecture, where the sequence was fed directly into an LSTM (input size = 9, hidden_size = 64), and the final hidden state was passed into a Linear (64 → 6) layer for classification. Both models were trained using cross-entropy loss and optimized with Adam.
 
+- Performance
+  - RNN outperformed FFNN on validation accuracy.
+  - RNN generalized better due to its ability to retain temporal relationships.
+  - FFNN showed slower learning and overfitting tendencies.
+
+- Convergence
+  - FFNN achieved high accuracy in fewer epochs.
+  - RNN took longer to improve, suggesting a harder time fitting sequence data.
+
+- Training Time
+  - FFNN trained almost 1.5x faster but with lower accuracy.
+  - RNN required more computation (due to LSTM cells), but better performance justified it.
+
 2. FFNN vs. CNN on Image Data (FashionMNIST)
 
 The second comparison used the FashionMNIST dataset, consisting of (28 x 28) grayscale images of clothing items from 10 categories. No resizing was required, and all pixel
